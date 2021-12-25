@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Teguh_"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-12-25 05:25:54 PM"/>
+        <attribute name="created" value="VGVndWhfO1RFR1VIOzIwMjEtMTItMjU7MTI6NTc6MTQgUE07MjI2NA=="/>
+        <attribute name="edited" value="VGVndWhfO1RFR1VIOzIwMjEtMTItMjU7MDU6MjU6NTQgUE07NjsyMzc4"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="umur" type="Integer" array="False" size=""/>
+            <declare name="sudah" type="String" array="False" size=""/>
+            <declare name="belum" type="String" array="False" size=""/>
+            <declare name="vaksin" type="String" array="False" size=""/>
+            <declare name="n" type="String" array="False" size=""/>
+            <declare name="y" type="String" array="False" size=""/>
+            <declare name="untukAnak" type="String" array="False" size=""/>
+            <output expression="&quot;masukan umur anda&quot;" newline="True"/>
+            <input variable="umur"/>
+            <if expression="umur&lt;13">
+                <then>
+                    <output expression="&quot; INI ADALAH ANAK ANAK silahkan isi apakah anda sendirian atau di antar, kalau di antar ketikan (y)dan kalau sendirian ketik (n)&quot;" newline="True"/>
+                    <input variable="untukAnak"/>
+                    <if expression="untukAnak==&quot;y&quot;">
+                        <then>
+                            <output expression="untukAnak&amp;&quot; silahkan untuk mengisi data apakah sudah vaksin atau belum&quot;" newline="True"/>
+                        </then>
+                        <else>
+                            <output expression="untukAnak&amp;&quot; tidak boleh masuk&quot;" newline="True"/>
+                            <input variable="n"/>
+                            <comment text="pembatas"/>
+                        </else>
+                    </if>
+                </then>
+                <else>
+                    <if expression="umur&lt;19">
+                        <then>
+                            <output expression="umur&amp;&quot; remaja&quot;" newline="True"/>
+                        </then>
+                        <else>
+                            <if expression="umur&lt;26">
+                                <then>
+                                    <output expression="umur&amp;&quot; dewasa muda&quot;" newline="True"/>
+                                </then>
+                                <else>
+                                    <if expression="umur&gt;59">
+                                        <then>
+                                            <output expression="umur&amp;&quot; tua&quot;" newline="True"/>
+                                        </then>
+                                        <else>
+                                            <output expression="umur&amp;&quot; dewasa&quot;" newline="True"/>
+                                        </else>
+                                    </if>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <output expression="&quot;apakah anda sudah di vaksin? kalau sudah ketik (sudah) kalau belum ketik (belum)&quot;" newline="True"/>
+            <input variable="vaksin"/>
+            <if expression="vaksin==&quot;sudah&quot;">
+                <then>
+                    <output expression="vaksin&amp;&quot;, silahkan boleh masuk mall&quot;" newline="True"/>
+                </then>
+                <else>
+                    <if expression="vaksin==&quot;belum&quot;">
+                        <then>
+                            <output expression="vaksin&amp;&quot;, mohon maaf tidak boleh masuk mall&quot;" newline="True"/>
+                        </then>
+                        <else>
+                            <output expression="vaksin&amp;&quot; , mohon maaf tidak boleh masuk mall&quot;" newline="True"/>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
